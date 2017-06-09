@@ -1,0 +1,20 @@
+﻿@model ClashKO.Models.Clan
+@{
+    ViewBag.Title = "index";
+}
+
+<h2>Members</h2>
+
+<ul data-bind="foreach: Members">
+    <li>
+        <span data-bind="text: Name"></span>
+    </li>
+</ul>
+
+<script>
+    $(function() {
+        var clanViewModel = @Html.Raw(Json.Encode(Model));
+        ko.applyBindings(clanViewModel);
+    });
+</script>
+
